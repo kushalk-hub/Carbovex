@@ -1,0 +1,40 @@
+{
+  "name": "carbonx-backend",
+  "version": "1.0.0",
+  "private": true,
+  "description": "CarbonX — CCTS carbon credit exchange API (Express + MongoDB + Socket.IO)",
+  "type": "commonjs",
+  "main": "src/server.js",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js",
+    "db:setup": "node scripts/setup.js",
+    "db:reset": "node scripts/setup.js --reset",
+    "db:verify-append-only": "node scripts/verifyAppendOnly.js",
+    "db:seed": "node scripts/seed.js",
+    "db:import-ccts": "node scripts/importCcts.js",
+    "mongo:test-rs": "node scripts/mongoTestReplicaSet.js",
+    "simulate": "node scripts/simulate.js",
+    "smoke": "node tests/smoke.js",
+    "test": "node --test \"tests/**/*.test.js\"",
+    "test:db": "node --test tests/integration.test.js",
+    "routes": "node scripts/listRoutes.js",
+    "lint:check": "node scripts/checkSyntax.js"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "express-rate-limit": "^7.4.0",
+    "helmet": "^7.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.24.4",
+    "morgan": "^1.10.0",
+    "socket.io": "^4.7.5",
+    "zod": "^3.23.8"
+  }
+}
